@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Container } from "@/components/ui/Container";
 
 type SolutionCategoryProps = {
@@ -30,9 +31,11 @@ export function SolutionCategory({
 
         <ul
           className="mt-10 grid gap-4 sm:grid-cols-2 lg:[grid-template-columns:repeat(var(--solution-columns),minmax(0,1fr))]"
-          style={{
-            ["--solution-columns" as "--solution-columns"]: `${columnCount}`,
-          }}
+          style={
+            {
+              "--solution-columns": columnCount,
+            } as CSSProperties
+          }
         >
           {services.map((service) => (
             <li
