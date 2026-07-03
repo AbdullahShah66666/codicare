@@ -37,20 +37,23 @@ const benefits = [
 
 export function WhyChooseCodiCare() {
   return (
-    <section className="bg-white" aria-labelledby="why-choose-codicare-heading">
+    <section
+      className="bg-surface"
+      aria-labelledby="why-choose-codicare-heading"
+    >
       <Container className="py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div
-            className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm"
+            className="rounded-[2rem] border border-subtle bg-surface-secondary p-8 shadow-sm"
             aria-label="Healthcare image placeholder"
             role="img"
           >
-            <div className="flex min-h-[320px] items-center justify-center rounded-[1.5rem] border border-dashed border-slate-300 bg-white p-6">
+            <div className="flex min-h-[320px] items-center justify-center rounded-[1.5rem] border border-dashed border-subtle bg-surface p-6">
               <div className="text-center">
-                <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-inverse text-on-primary">
                   <Stethoscope className="size-7" aria-hidden="true" />
                 </div>
-                <p className="mt-4 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
+                <p className="mt-4 text-sm font-medium uppercase tracking-[0.2em] text-muted">
                   Healthcare image placeholder
                 </p>
               </div>
@@ -58,17 +61,18 @@ export function WhyChooseCodiCare() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
               Why Choose CodiCare
             </p>
             <h2
               id="why-choose-codicare-heading"
-              className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 lg:text-4xl"
+              className="mt-3 text-3xl font-semibold tracking-tight text-primary lg:text-4xl"
             >
               Why healthcare organizations trust CodiCare.
             </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-              We provide a dependable foundation that helps healthcare teams stay organized, informed, and ready to act.
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-secondary">
+              We provide a dependable foundation that helps healthcare teams
+              stay organized, informed, and ready to act.
             </p>
 
             <div className="mt-10 space-y-6">
@@ -97,12 +101,12 @@ type BenefitItemProps = {
 function BenefitItem({ icon: Icon, title, description }: BenefitItemProps) {
   return (
     <div className="flex gap-4">
-      <div className="mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-slate-950">
+      <div className="mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary-light text-primary">
         <Icon className="size-5" aria-hidden="true" />
       </div>
       <div>
-        <h3 className="text-base font-semibold text-slate-950">{title}</h3>
-        <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+        <h3 className="text-base font-semibold text-primary">{title}</h3>
+        <p className="mt-2 text-sm leading-6 text-secondary">{description}</p>
       </div>
     </div>
   );

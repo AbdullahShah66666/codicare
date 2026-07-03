@@ -42,19 +42,19 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-slate-50" aria-labelledby="faq-section-heading">
+    <section className="bg-surface-secondary" aria-labelledby="faq-section-heading">
       <Container className="py-16 lg:py-20">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
             FAQ
           </p>
           <h2
             id="faq-section-heading"
-            className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 lg:text-4xl"
+            className="mt-3 text-3xl font-semibold tracking-tight text-primary lg:text-4xl"
           >
             Common questions about CodiCare solutions.
           </h2>
-          <p className="mt-4 text-lg leading-8 text-slate-600">
+          <p className="mt-4 text-lg leading-8 text-secondary">
             Find quick answers to the most common questions healthcare teams ask when evaluating CodiCare.
           </p>
         </div>
@@ -89,7 +89,7 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
   const buttonId = `faq-button-${index}`;
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <article className="overflow-hidden rounded-2xl border border-subtle bg-surface shadow-sm">
       <button
         id={buttonId}
         type="button"
@@ -98,9 +98,9 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
         aria-controls={panelId}
         onClick={onToggle}
       >
-        <span className="text-base font-semibold text-slate-950">{question}</span>
+        <span className="text-base font-semibold text-primary">{question}</span>
         <ChevronDown
-          className={`size-5 shrink-0 text-slate-500 transition-transform duration-300 ${
+          className={`size-5 shrink-0 text-muted transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
           }`}
           aria-hidden="true"
@@ -116,7 +116,7 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
         }`}
       >
         <div className="min-h-0">
-          <p className="text-sm leading-6 text-slate-600">{answer}</p>
+          <p className="text-sm leading-6 text-secondary">{answer}</p>
         </div>
       </div>
     </article>

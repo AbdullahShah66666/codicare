@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #eff6ff;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafc;
+  --color-surface-inverse: #0f172a;
+  --color-border: #e2e8f0;
+  --color-border-inverse: rgba(255, 255, 255, 0.16);
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #ffffff;
+  --color-text-inverse-muted: #cbd5e1;
+  --color-success: #16a34a;
+  --radius-lg: 2rem;
+  --shadow-soft: 0 10px 30px -12px rgba(15, 23, 42, 0.16);
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.08), 0 10px 25px -12px rgba(15, 23, 42, 0.16);
+  --background: var(--color-surface);
+  --foreground: var(--color-text-primary);
 }
 
 @theme inline {
@@ -10,6 +27,92 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@layer utilities {
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+
+  .bg-surface-secondary {
+    background-color: var(--color-surface-secondary);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-primary-hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  .bg-primary-light {
+    background-color: var(--color-primary-light);
+  }
+
+  .bg-success {
+    background-color: var(--color-success);
+  }
+
+  .bg-inverse {
+    background-color: var(--color-surface-inverse);
+  }
+
+  .bg-text-primary {
+    background-color: var(--color-text-primary);
+  }
+
+  .border-subtle {
+    border-color: var(--color-border);
+  }
+
+  .border-primary-light {
+    border-color: var(--color-primary-light);
+  }
+
+  .border-inverse {
+    border-color: var(--color-border-inverse);
+  }
+
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+
+  .text-accent {
+    color: var(--color-primary);
+  }
+
+  .text-success {
+    color: var(--color-success);
+  }
+
+  .text-on-primary {
+    color: var(--color-surface);
+  }
+
+  .text-inverse {
+    color: var(--color-text-inverse);
+  }
+
+  .text-inverse-muted {
+    color: var(--color-text-inverse-muted);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
 }
 
 * {

@@ -11,7 +11,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <>
       <Navbar />
-      <main id="main-content" className="flex-1 bg-white" tabIndex={-1}>
+      <main id="main-content" className="flex-1 bg-surface" tabIndex={-1}>
         {children}
       </main>
       <Footer />

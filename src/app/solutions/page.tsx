@@ -2,7 +2,7 @@ import { CTASection } from "@/components/solutions/CTASection";
 import { FAQSection } from "@/components/solutions/FAQSection";
 import { SolutionCategory } from "@/components/solutions/SolutionCategory";
 import { SolutionsHero } from "@/components/solutions/SolutionsHero";
-import { WhyChooseCodiCare } from "@/components/solutions/WhyChooseCodiCare";
+import { WhyChooseUsSection } from "@/components/layout/WhyChooseUsSection";
 import { solutionCategories } from "@/lib/data/solutions";
 
 export default function SolutionsPage() {
@@ -18,7 +18,7 @@ export default function SolutionsPage() {
           services={category.services}
         />
       ))}
-      <WhyChooseCodiCare />
+      <WhyChooseUsSection />
       <FAQSection />
       <CTASection />
     </>

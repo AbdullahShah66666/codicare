@@ -3,7 +3,7 @@ import { ClipboardCheck, Files, Shield, Workflow } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
 
-const steps = [
+const defaultSteps = [
   {
     number: "01",
     icon: Files,
@@ -34,23 +34,43 @@ const steps = [
   },
 ] as const;
 
-export function HowWeWorkSection() {
+type HowWeWorkSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  steps?: readonly Step[];
+};
+
+type Step = {
+  number: string;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
+export function HowWeWorkSection({
+  eyebrow = "How We Work",
+  title = "A simple four-step workflow for medical billing teams.",
+  description = "The process is designed to stay clear and connected from the first input to the final outcome.",
+  steps = defaultSteps,
+}: HowWeWorkSectionProps) {
   return (
-    <section className="bg-slate-50" aria-labelledby="how-we-work-heading">
+    <section
+      className="bg-surface-secondary"
+      aria-labelledby="how-we-work-heading"
+    >
       <Container className="py-16 lg:py-20">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-            How We Work
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
+            {eyebrow}
           </p>
           <h2
             id="how-we-work-heading"
-            className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 lg:text-4xl"
+            className="mt-3 text-3xl font-semibold tracking-tight text-primary lg:text-4xl"
           >
-            A simple four-step workflow for medical billing teams.
+            {title}
           </h2>
-          <p className="mt-4 text-lg leading-8 text-slate-600">
-            The process is designed to stay clear and connected from the first input to the final outcome.
-          </p>
+          <p className="mt-4 text-lg leading-8 text-secondary">{description}</p>
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-4">
@@ -76,23 +96,28 @@ type ProcessCardProps = {
   description: string;
 };
 
-function ProcessCard({ number, icon: Icon, title, description }: ProcessCardProps) {
+function ProcessCard({
+  number,
+  icon: Icon,
+  title,
+  description,
+}: ProcessCardProps) {
   return (
-    <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+    <article className="rounded-[1.75rem] border border-subtle bg-surface p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
       <div className="flex items-center justify-between">
-        <span className="text-sm font-semibold tracking-[0.2em] text-slate-500">
+        <span className="text-sm font-semibold tracking-[0.2em] text-muted">
           {number}
         </span>
-        <div className="flex size-11 items-center justify-center rounded-2xl bg-slate-950 text-white">
+        <div className="flex size-11 items-center justify-center rounded-2xl bg-inverse text-on-primary">
           <Icon className="size-5" aria-hidden="true" />
         </div>
       </div>
 
-      <h3 className="mt-6 text-xl font-semibold tracking-tight text-slate-950">
+      <h3 className="mt-6 text-xl font-semibold tracking-tight text-primary">
         {title}
       </h3>
 
-      <p className="mt-3 text-sm leading-6 text-slate-600">{description}</p>
+      <p className="mt-3 text-sm leading-6 text-secondary">{description}</p>
     </article>
   );
 }

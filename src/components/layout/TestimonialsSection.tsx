@@ -29,20 +29,24 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="bg-slate-50" aria-labelledby="testimonials-heading">
+    <section
+      className="bg-surface-secondary"
+      aria-labelledby="testimonials-heading"
+    >
       <Container className="py-16 lg:py-20">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
             Testimonials
           </p>
           <h2
             id="testimonials-heading"
-            className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 lg:text-4xl"
+            className="mt-3 text-3xl font-semibold tracking-tight text-primary lg:text-4xl"
           >
             Trusted by teams that value clarity and consistency.
           </h2>
-          <p className="mt-4 text-lg leading-8 text-slate-600">
-            Hear how healthcare organizations describe the experience of working with CodiCare.
+          <p className="mt-4 text-lg leading-8 text-secondary">
+            Hear how healthcare organizations describe the experience of working
+            with CodiCare.
           </p>
         </div>
 
@@ -69,26 +73,34 @@ type TestimonialCardProps = {
   quote: string;
 };
 
-function TestimonialCard({ initials, name, role, quote }: TestimonialCardProps) {
+function TestimonialCard({
+  initials,
+  name,
+  role,
+  quote,
+}: TestimonialCardProps) {
   return (
-    <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+    <article className="rounded-[1.75rem] border border-subtle bg-surface p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center gap-4">
           <div
-            className="flex size-14 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white"
+            className="flex size-14 items-center justify-center rounded-full bg-inverse text-sm font-semibold text-on-primary"
             aria-label={`${name} photo placeholder`}
           >
             {initials}
           </div>
           <div>
-            <h3 className="text-base font-semibold text-slate-950">{name}</h3>
-            <p className="mt-1 text-sm text-slate-500">{role}</p>
+            <h3 className="text-base font-semibold text-primary">{name}</h3>
+            <p className="mt-1 text-sm text-muted">{role}</p>
           </div>
         </div>
-        <Quote className="size-5 shrink-0 text-slate-300" aria-hidden="true" />
+        <Quote className="size-5 shrink-0 text-muted" aria-hidden="true" />
       </div>
 
-      <div className="mt-6 flex gap-1 text-amber-400" aria-hidden="true">
+      <div
+        className="mt-6 flex gap-1 text-[color:var(--color-success)]"
+        aria-hidden="true"
+      >
         <Star className="size-4 fill-current" />
         <Star className="size-4 fill-current" />
         <Star className="size-4 fill-current" />
@@ -96,7 +108,7 @@ function TestimonialCard({ initials, name, role, quote }: TestimonialCardProps) 
         <Star className="size-4 fill-current" />
       </div>
 
-      <p className="mt-4 text-sm leading-6 text-slate-600">"{quote}"</p>
+      <p className="mt-4 text-sm leading-6 text-secondary">"{quote}"</p>
     </article>
   );
 }

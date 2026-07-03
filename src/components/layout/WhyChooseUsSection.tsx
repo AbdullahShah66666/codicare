@@ -1,81 +1,80 @@
 import type { LucideIcon } from "lucide-react";
-import { CheckCircle2, FileHeart, Gauge, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  CheckCircle2,
+  Headset,
+  ChartColumnIncreasing,
+  ShieldCheck,
+} from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
 
 const benefits = [
   {
     icon: ShieldCheck,
-    title: "Trusted Security",
+    title: "HIPAA-Compliant Security",
     description:
-      "Protect sensitive healthcare information with a platform built around reliability and control.",
+      "We use safe, legal healthcare solutions based on industry standards to safeguard patient data.",
   },
   {
-    icon: Gauge,
-    title: "Operational Clarity",
+    icon: Headset,
+    title: "Dedicated Expert Support",
     description:
-      "See the status of your workflows quickly and make decisions with less friction.",
+      "Get immediate assistance from skilled professionals who are proficient in healthcare operations.",
   },
   {
-    icon: FileHeart,
-    title: "Healthcare Focused",
+    icon: ChartColumnIncreasing,
+    title: "Revenue Growth",
     description:
-      "Designed specifically for care teams, billing operations, and provider support workflows.",
-  },
-  {
-    icon: Sparkles,
-    title: "Scalable Foundation",
-    description:
-      "A reusable system that adapts as your organization grows without adding complexity.",
+      "Enhance financial performance and boost collections with effective revenue cycle management.",
   },
 ] as const;
 
-export function WhyChooseUsSection() {
+type WhyChooseUsSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  placeholderLabel?: string;
+  placeholderBadge?: string;
+  benefits?: readonly Benefit[];
+};
+
+type Benefit = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
+export function WhyChooseUsSection({
+  eyebrow = "Why Choose Codicares",
+  title = "Helping Healthcare Providers To Work Smarter Every Day",
+  description = "We offer a targeted operational framework that supports teams in maintaining organization, knowledge, and self-assurance in their daily tasks.",
+}: WhyChooseUsSectionProps) {
   return (
-    <section className="bg-white" aria-labelledby="why-choose-us-heading">
+    <section className="bg-surface" aria-labelledby="why-choose-us-heading">
       <Container className="py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
-            <div
-              className="flex min-h-[320px] items-center justify-center rounded-[1.5rem] border border-dashed border-slate-300 bg-white p-6"
-              aria-label="Healthcare illustration placeholder"
-              role="img"
-            >
-              <div className="text-center">
-                <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-slate-950 text-white">
-                  <CheckCircle2 className="size-7" aria-hidden="true" />
-                </div>
-                <p className="mt-4 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
-                  Healthcare illustration placeholder
-                </p>
-              </div>
-            </div>
-          </div>
+        <div>
+          <p className="text-lg font-semibold uppercase tracking-[0.2em] text-muted">
+            {eyebrow}
+          </p>
+          <h2
+            id="why-choose-us-heading"
+            className="mt-3 text-2xl font-semibold tracking-tight text-primary lg:text-4xl"
+          >
+            {title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-secondary">
+            {description}
+          </p>
 
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Why Choose Us
-            </p>
-            <h2
-              id="why-choose-us-heading"
-              className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 lg:text-4xl"
-            >
-              Why healthcare providers trust CodiCare.
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-              We provide a focused operational foundation that helps teams stay organized, informed, and confident in their day-to-day work.
-            </p>
-
-            <div className="mt-10 space-y-6">
-              {benefits.map((benefit) => (
-                <BenefitItem
-                  key={benefit.title}
-                  icon={benefit.icon}
-                  title={benefit.title}
-                  description={benefit.description}
-                />
-              ))}
-            </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {benefits.map((benefit) => (
+              <WhyChooseUsCard
+                key={benefit.title}
+                icon={benefit.icon}
+                title={benefit.title}
+                description={benefit.description}
+              />
+            ))}
           </div>
         </div>
       </Container>
@@ -92,13 +91,39 @@ type BenefitItemProps = {
 function BenefitItem({ icon: Icon, title, description }: BenefitItemProps) {
   return (
     <div className="flex gap-4">
-      <div className="mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-slate-950">
+      <div className="mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary-light text-primary">
         <Icon className="size-5" aria-hidden="true" />
       </div>
       <div>
-        <h3 className="text-base font-semibold text-slate-950">{title}</h3>
-        <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+        <h3 className="text-base font-semibold text-primary">{title}</h3>
+        <p className="mt-2 text-sm leading-6 text-secondary">{description}</p>
       </div>
     </div>
+  );
+}
+
+type WhyChooseUsCardProps = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
+function WhyChooseUsCard({
+  icon: Icon,
+  title,
+  description,
+}: WhyChooseUsCardProps) {
+  return (
+    <article className="group rounded-[1.75rem] border border-subtle bg-surface p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+      <div className="flex size-12 items-center justify-center rounded-2xl bg-inverse text-on-primary">
+        <Icon className="size-5" aria-hidden="true" />
+      </div>
+
+      <h3 className="mt-5 text-xl font-semibold tracking-tight text-primary">
+        {title}
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-secondary">{description}</p>
+    </article>
   );
 }
