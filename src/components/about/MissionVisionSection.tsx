@@ -1,20 +1,20 @@
 import { Target, Eye } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
-import { InfoCard } from "@/components/layout/InfoCard";
+import { InfoCard } from "@/components/about/InfoCard";
 
 const cards = [
   {
     icon: Target,
     title: "Our Mission",
     description:
-      "To help healthcare organizations operate with greater clarity, improve coordination across teams, and deliver more dependable experiences for patients and staff.",
+      "To provide healthcare organizations with cutting-edge technology and revenue cycle solutions that boost their financial performance and operational effectiveness.",
   },
   {
     icon: Eye,
     title: "Our Vision",
     description:
-      "To become the trusted foundation for modern healthcare operations, giving every organization a scalable platform that supports growth and better outcomes.",
+      "To become a trustworthy worldwide healthcare technology partner by providing clever, dependable, and patient-centered solutions.",
   },
 ] as const;
 
@@ -26,14 +26,11 @@ export function MissionVisionSection() {
     >
       <Container className="py-16 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
-            Mission &amp; Vision
-          </p>
           <h2
             id="mission-vision-heading"
             className="mt-3 text-3xl font-semibold tracking-tight text-primary lg:text-4xl"
           >
-            The principles guiding how we build for healthcare.
+            Mission &amp; Vision
           </h2>
         </div>
 

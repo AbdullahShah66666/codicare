@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
@@ -10,15 +11,17 @@ export function Logo({ className = "" }: LogoProps) {
   return (
     <Link
       href="/"
-      className={`group inline-flex items-center gap-3 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-600 ${className}`}
+      className={`inline-flex rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${className}`}
       aria-label={`${siteConfig.name} home`}
     >
-      <span className="flex size-10 items-center justify-center rounded-2xl bg-inverse text-sm font-bold tracking-tight text-on-primary shadow-sm transition-transform duration-200 group-hover:-translate-y-0.5">
-        C
-      </span>
-      <span className="text-lg font-semibold tracking-tight text-primary">
-        {siteConfig.name}
-      </span>
+      <Image
+        src="/logos/codicare-logo.png"
+        alt={siteConfig.name}
+        width={120}
+        height={60}
+        priority
+        className="h-14 w-auto"
+      />
     </Link>
   );
 }

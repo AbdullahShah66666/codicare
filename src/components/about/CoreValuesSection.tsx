@@ -54,12 +54,12 @@ export function CoreValuesSection() {
     <section className="bg-surface" aria-labelledby="core-values-heading">
       <Container className="py-16 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
+          <p className="text-lg font-semibold uppercase tracking-[0.2em] text-muted">
             Core Values
           </p>
           <h2
             id="core-values-heading"
-            className="mt-3 text-3xl font-semibold tracking-tight text-primary lg:text-4xl"
+            className="mt-3 text-2xl font-semibold tracking-tight text-primary lg:text-4xl"
           >
             The principles that guide how we build and support CodiCare.
           </h2>

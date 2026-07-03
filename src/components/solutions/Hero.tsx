@@ -29,7 +29,7 @@ const solutionHeroCards = [
   },
 ];
 
-export function SolutionsHero() {
+export function Hero() {
   return (
     <section
       className="border-b border-subtle bg-surface"

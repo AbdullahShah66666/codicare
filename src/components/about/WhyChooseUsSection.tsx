@@ -33,15 +33,6 @@ type WhyChooseUsSectionProps = {
   eyebrow?: string;
   title?: string;
   description?: string;
-  placeholderLabel?: string;
-  placeholderBadge?: string;
-  benefits?: readonly Benefit[];
-};
-
-type Benefit = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
 };
 
 export function WhyChooseUsSection({
@@ -79,26 +70,6 @@ export function WhyChooseUsSection({
         </div>
       </Container>
     </section>
-  );
-}
-
-type BenefitItemProps = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-};
-
-function BenefitItem({ icon: Icon, title, description }: BenefitItemProps) {
-  return (
-    <div className="flex gap-4">
-      <div className="mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-2xl bg-primary-light text-primary">
-        <Icon className="size-5" aria-hidden="true" />
-      </div>
-      <div>
-        <h3 className="text-base font-semibold text-primary">{title}</h3>
-        <p className="mt-2 text-sm leading-6 text-secondary">{description}</p>
-      </div>
-    </div>
   );
 }
 

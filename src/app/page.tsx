@@ -1,8 +1,8 @@
-import { Hero } from "@/components/layout/Hero";
-import { TrustedStats } from "@/components/layout/TrustedStats";
-import { SolutionsSection } from "@/components/layout/SolutionsSection";
-import { WhyChooseUsSection } from "@/components/layout/WhyChooseUsSection";
-import { CTASection } from "@/components/layout/CTASection";
+import { Hero } from "@/components/home/Hero";
+import { SolutionsSection } from "@/components/home/SolutionsSection";
+import { TrustedStats } from "@/components/home/TrustedStats";
+import { WhyChooseUsSection } from "@/components/about/WhyChooseUsSection";
+import { CTASection } from "@/components/ui/CTASection";
 
 export default function Home() {
   return (

@@ -8,12 +8,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-subtle bg-inverse text-inverse">
+    <footer className="pt-16 border-t border-subtle bg-surface-secondary">
       <Container className="py-14 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_0.8fr_1fr]">
           <div className="max-w-sm">
             <Logo className="[&>span:first-child]:bg-surface [&>span:first-child]:text-primary [&>span:last-child]:text-inverse" />
-            <p className="mt-5 text-sm leading-6 text-inverse-muted">
+            <p className="mt-5 text-sm leading-6">
               {siteConfig.description}
             </p>
           </div>
@@ -22,13 +22,13 @@ export function Footer() {
           <FooterLinkGroup title="Solutions" links={siteConfig.solutionLinks} />
 
           <address className="not-italic">
-            <h2 className="text-sm font-semibold tracking-wide text-inverse">
+            <h2 className="text-sm font-semibold tracking-wide">
               Contact
             </h2>
-            <ul className="mt-4 space-y-3 text-sm text-inverse-muted">
+            <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <a
-                  className="transition-colors hover:text-inverse"
+                  className="transition-colors"
                   href={`mailto:${siteConfig.contact.email}`}
                 >
                   {siteConfig.contact.email}
@@ -36,7 +36,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  className="transition-colors hover:text-inverse"
+                  className="transition-colors"
                   href={`tel:${siteConfig.contact.phone.replace(
                     /[^+\d]/g,
                     ""
@@ -50,7 +50,7 @@ export function Footer() {
           </address>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-inverse pt-6 text-sm text-inverse-muted md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-inverse pt-6 text-sm md:flex-row md:items-center md:justify-between">
           <p>
             © {currentYear} {siteConfig.name}. All rights reserved.
           </p>
@@ -72,14 +72,14 @@ type FooterLinkGroupProps = {
 function FooterLinkGroup({ title, links }: FooterLinkGroupProps) {
   return (
     <nav aria-label={title}>
-      <h2 className="text-sm font-semibold tracking-wide text-inverse">
+      <h2 className="text-sm font-semibold tracking-wide">
         {title}
       </h2>
       <ul className="mt-4 space-y-3">
         {links.map((link) => (
           <li key={link.href}>
             <Link
-              className="text-sm text-inverse-muted transition-colors hover:text-inverse"
+              className="text-sm transition-colors"
               href={link.href}
             >
               {link.label}

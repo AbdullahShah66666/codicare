@@ -1,8 +1,8 @@
-import { CTASection } from "@/components/solutions/CTASection";
+import { CTASection } from "@/components/ui/CTASection";
 import { FAQSection } from "@/components/solutions/FAQSection";
+import { Hero as SolutionsHero } from "@/components/solutions/Hero";
 import { SolutionCategory } from "@/components/solutions/SolutionCategory";
-import { SolutionsHero } from "@/components/solutions/SolutionsHero";
-import { WhyChooseUsSection } from "@/components/layout/WhyChooseUsSection";
+import { WhyChooseUsSection } from "@/components/about/WhyChooseUsSection";
 import { solutionCategories } from "@/lib/data/solutions";
 
 export default function SolutionsPage() {

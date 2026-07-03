@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import { HeroCards } from "../ui/HeroCards";
+import { HeroCards } from "@/components/ui/HeroCards";
 
 const aboutHeroCards = [
   {
@@ -36,8 +36,8 @@ export function AboutHero() {
     >
       <Container className="grid min-h-[calc(100vh-5rem)] items-center gap-16 py-20 lg:grid-cols-[1fr_0.95fr] lg:py-24">
         <div className="max-w-2xl">
-          <p className="inline-flex rounded-full border border-primary-light bg-primary-light px-4 py-1.5 text-sm font-medium text-accent">
-            Trusted healthcare technology partner
+          <p className="inline-flex rounded-full border border-primary-light bg-primary-light px-4 py-1.5 text-sm font-medium text-accent uppercase">
+            Trusted partner for healthcare solutions
           </p>
 
           <h1
@@ -48,9 +48,7 @@ export function AboutHero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-secondary">
-            We build healthcare solutions that support better organization,
-            stronger operational control, and a more dependable experience for
-            teams and patients alike.
+            Codicare provides healthcare technology, medical billing, coding, and revenue cycle solutions to help healthcare organisations improve their financial performance, streamline operations, and focus on delivering exceptional patient care.
           </p>
         </div>
 

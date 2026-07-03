@@ -39,14 +39,6 @@ function HeroCard({ title, description, className = "" }: HeroCardProps) {
       <h3 className="text-lg font-semibold text-primary">{title}</h3>
 
       <p className="mt-3 text-sm leading-6 text-secondary">{description}</p>
-
-      <div className="mt-6 flex items-center gap-2">
-        <span className="h-2 w-2 rounded-full bg-success" />
-
-        <span className="text-xs font-medium uppercase tracking-wide text-muted">
-          Available
-        </span>
-      </div>
     </div>
   );
 }
