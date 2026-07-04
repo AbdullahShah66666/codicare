@@ -5,12 +5,14 @@ import { siteConfig } from "@/config/site";
 
 type LogoProps = {
   className?: string;
+  onClick?: () => void;
 };
 
-export function Logo({ className = "" }: LogoProps) {
+export function Logo({ className = "", onClick }: LogoProps) {
   return (
     <Link
       href="/"
+      onClick={onClick}
       className={`inline-flex rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${className}`}
       aria-label={`${siteConfig.name} home`}
     >

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { MobileMenu } from "@/components/layout/MobileMenu";
 import { NavLink } from "@/components/layout/NavLink";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
@@ -20,7 +21,7 @@ export function Navbar() {
           <Logo />
 
           <nav
-            className="hidden items-center gap-1 md:flex"
+            className="hidden items-center gap-1 lg:flex"
             aria-label="Primary navigation"
           >
             {siteConfig.navLinks.map((link) => (
@@ -28,7 +29,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-inverse px-5 py-2.5 text-sm font-semibold text-on-primary shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-primary-hover)] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
@@ -36,6 +37,8 @@ export function Navbar() {
               Get Started
             </Link>
           </div>
+
+          <MobileMenu />
         </div>
       </Container>
     </header>

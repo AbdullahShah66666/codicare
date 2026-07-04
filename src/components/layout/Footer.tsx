@@ -10,21 +10,39 @@ export function Footer() {
   return (
     <footer className="pt-16 border-t border-subtle bg-surface-secondary">
       <Container className="py-14 lg:py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_0.8fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_0.8fr_0.8fr_1fr]">
           <div className="max-w-sm">
             <Logo className="[&>span:first-child]:bg-surface [&>span:first-child]:text-primary [&>span:last-child]:text-inverse" />
-            <p className="mt-5 text-sm leading-6">
-              {siteConfig.description}
-            </p>
+            <p className="mt-5 text-sm leading-6">{siteConfig.description}</p>
           </div>
 
           <FooterLinkGroup title="Quick links" links={siteConfig.navLinks} />
           <FooterLinkGroup title="Solutions" links={siteConfig.solutionLinks} />
 
+          <nav aria-label="Legal">
+            <h2 className="text-sm font-semibold tracking-wide">Legal</h2>
+            <ul className="mt-4 space-y-3">
+              <li>
+                <Link
+                  className="text-sm transition-colors"
+                  href="/privacy-policy"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm transition-colors"
+                  href="/terms-and-conditions"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           <address className="not-italic">
-            <h2 className="text-sm font-semibold tracking-wide">
-              Contact
-            </h2>
+            <h2 className="text-sm font-semibold tracking-wide">Contact</h2>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <a
@@ -72,16 +90,11 @@ type FooterLinkGroupProps = {
 function FooterLinkGroup({ title, links }: FooterLinkGroupProps) {
   return (
     <nav aria-label={title}>
-      <h2 className="text-sm font-semibold tracking-wide">
-        {title}
-      </h2>
+      <h2 className="text-sm font-semibold tracking-wide">{title}</h2>
       <ul className="mt-4 space-y-3">
         {links.map((link) => (
           <li key={link.href}>
-            <Link
-              className="text-sm transition-colors"
-              href={link.href}
-            >
+            <Link className="text-sm transition-colors" href={link.href}>
               {link.label}
             </Link>
           </li>
